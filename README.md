@@ -24,11 +24,15 @@ I use Pandas to scrape data, transform it into CSV format, and then store it in 
 
 #### Raw Dataframes 
 
-Attendances
+##### Attendances
 ![Attendances](./Images/AttendancesRAWDataFrame.png)
-Champions
+<hr>
+
+##### Champions
 ![Champions](./Images/ChampionsRAWDataframe.png)
-Champions
+<hr>
+
+##### SPL Teams
 ![sa1TeamsRAWDataFrame](./Images/sa1TeamsRAWDataFrame.png)
 
 
