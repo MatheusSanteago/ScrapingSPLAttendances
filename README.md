@@ -22,4 +22,14 @@ Within the extract notebook, there are three separate areas for scraping differe
 
 I use Pandas to scrape data, transform it into CSV format, and then store it in the RAW Zone.
 
+#### Raw Dataframes 
+
+Attendances
+![Attendances](./Images/AttendancesRAWDataFrame.png)
+Champions
+![Champions](./Images/ChampionsRAWDataframe.png)
+Champions
+![sa1TeamsRAWDataFrame](./Images/sa1TeamsRAWDataFrame.png)
+
+
 # Not done!
