@@ -16,9 +16,9 @@ Saudi Pro League - [Wikipedia](https://en.wikipedia.org/wiki/Saudi_Pro_League)
 When it comes to gathering data from [Transfermarket](https://www.transfermarkt.com), I rely on Selenium, BeautifulSoup, Pandas, and re. To complete this project, I opted for the Google Chrome driver.
 
 Within the extract notebook, there are three separate areas for scraping different URLs. These areas include:
-  1. Extracting attendance data from the 2007-2008 season.
-  2. Gathering information on 1st Division teams.
-  3. Extracting data on all 1st Division champions.
+  1. Extracting attendance data from the 2007-2023 season.
+  2. Gathering information on 1st and 2st Division teams.
+  3. Extracting data on all 1st and 2st Division champions.
 
 I use Pandas to scrape data, transform it into CSV format, and then store it in the RAW Zone.
 
