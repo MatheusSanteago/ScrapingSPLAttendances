@@ -22,6 +22,8 @@ Within the extract notebook, there are three separate areas for scraping differe
 
 I use Pandas to scrape data, transform it into CSV format, and then store it in the RAW Zone.
 
+[Extract Notebook](https://github.com/MatheusSanteago/ScrapingSPLAttendances/blob/master/extract.ipynb)
+
 #### Transform
 --
 #### Load
