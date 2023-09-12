@@ -20,7 +20,7 @@ Within the extract notebook, there are three separate areas for scraping differe
   2. Gathering information on 1st and 2st Division teams.
   3. Extracting data on all 1st and 2st Division champions.
 
-I use Pandas to scrape data, transform it into CSV format, and then store it in the RAW Zone.
+I use Pandas to preprocess data, transform it into CSV format and then store it in the RAW zone.
 
 [Extract Notebook](https://github.com/MatheusSanteago/ScrapingSPLAttendances/blob/master/extract.ipynb)
 
