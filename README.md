@@ -50,9 +50,13 @@ Teams - RAW
 ![RAW](./Images/sa1TeamsRAWDataFrame.png)
 
 #### Transform
+
 --
+[Transform - Notebook](https://github.com/MatheusSanteago/ScrapingSPLAttendances/blob/master/transform.ipynb)
+
 #### Load
 --
+[Load - Notebook](https://github.com/MatheusSanteago/ScrapingSPLAttendances/blob/master/transform.ipynb)
 
 #### Data Flow
 ![Data Flow](./Images/flow.png)
