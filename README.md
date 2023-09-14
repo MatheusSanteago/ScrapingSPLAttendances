@@ -38,12 +38,15 @@ I use Pandas to preprocess data, transform it into CSV format and then store it 
 ##### Results
 
 Attendances - RAW 
+<br>
 ![RAW](./Images/AttendancesRAWDataFrame.png)
 
 Champions - RAW 
+<br>
 ![RAW](./Images/ChampionsRAWDataframe.png)
 
 Teams - RAW 
+<br>
 ![RAW](./Images/sa1TeamsRAWDataFrame.png)
 
 #### Transform
