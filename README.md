@@ -11,12 +11,22 @@ I decided to extract this data in order to enable analysis of the league.
 
 Saudi Pro League - [Wikipedia](https://en.wikipedia.org/wiki/Saudi_Pro_League)
 
+#### Libraries used:
+  - Pandas:
+      - for data manipulation and analysis.
+  - Selenium:
+      - for automating web browser tasks, with Selenium, I can have the ideal scenario for dynamic web pages.
+  - SQLAlchemy:
+      - for database interaction, choose this lib due to its practicality.
+  - BeautifulSoup:
+      - for parsing and navigating HTML.
+
 #### Extract
 
 When it comes to gathering data from [Transfermarket](https://www.transfermarkt.com), I rely on Selenium, BeautifulSoup, Pandas, and re. To complete this project, I opted for the Google Chrome driver.
 
 Within the extract notebook, there are three separate areas for scraping different URLs. These areas include:
-  1. Extracting attendance data from the 2007-2023 season.
+  1. Extracting attendances data from the 2007-2023 season.
   2. Gathering information on 1st and 2st Division teams.
   3. Extracting data on all 1st and 2st Division champions.
 
