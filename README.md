@@ -22,7 +22,19 @@ Within the extract notebook, there are three separate areas for scraping differe
 
 I use Pandas to preprocess data, transform it into CSV format and then store it in the RAW zone.
 
-[Extract Notebook](https://github.com/MatheusSanteago/ScrapingSPLAttendances/blob/master/extract.ipynb)
+[Extract - Notebook](https://github.com/MatheusSanteago/ScrapingSPLAttendances/blob/master/extract.ipynb)
+
+
+##### Results
+
+Attendances - RAW 
+![RAW](./Images/AttendancesRAWDataFrame.png)
+
+Champions - RAW 
+![RAW](./Images/ChampionsRAWDataframe.png)
+
+Teams - RAW 
+![RAW](./Images/sa1TeamsRAWDataFrame.png)
 
 #### Transform
 --
