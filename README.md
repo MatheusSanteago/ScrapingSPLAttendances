@@ -1,4 +1,4 @@
-# Saudi Pro League - Attendance // Scraping Transfermarket
+# Saudi Pro League - Attendances, Clubs Info, Champions <br> Scraping Transfermarket
 
 ![SPLogo](https://upload.wikimedia.org/wikipedia/en/thumb/7/75/Roshn_Saudi_League_Logo.svg/208px-Roshn_Saudi_League_Logo.svg.png)
 
@@ -39,20 +39,59 @@ I use Pandas to preprocess data, transform it into CSV format and then store it 
 
 Attendances - RAW 
 <br>
-![RAW](./Images/AttendancesRAWDataFrame.png)
+<img src="./Images/AttendancesRAWDataFrame.png" width="650px">
 
 Champions - RAW 
 <br>
-![RAW](./Images/ChampionsRAWDataframe.png)
+<img src="./Images/ChampionsRAWDataframe.png" width="650px">
 
 Teams - RAW 
 <br>
-![RAW](./Images/sa1TeamsRAWDataFrame.png)
+<img src="./Images/sa1TeamsRAWDataFrame.png" width="650px">
 
 #### Transform
-![T](./Images/transform.png)
 
---
+In this step I performed the necessary transformations to improve the quality of the DataFrames. I used Pandas to manipulate the DataFrames, and re to make corrections with regex. 
+
+Nootebok has three functions that perform different transformations according to the content coming from the RAW DataFrame.
+
+After each transformation, the Trusted layer is loaded, where the data is already processed.
+<hr>
+In this transformation, I highlight the use of regex to make changes to the Stadium and Clubs columns, where both information can be extracted from a single line.
+
+Arab teams have a similar name pattern, by identifying this I was able to create a pattern where I could extract the data.
+##### Pattern 
+    pattern = "\B[ANH][Llab][-]?[a-zA-Z]+(?:-[a-zA-Z]+)?\s?[SFClub]{1,4}"
+###### Example
+Where it is pink, I used the pattern with the findall() method from the re library. Where it extracts a list of words according to the pattern
+
+In red, I used the sub() method, in this case where it was identified the pattern was replaced by the empty string. Resulting only in the name of the stadium.
+
+<img src="./Images/regexExample.png">
+
+  ###### Code fragment
+     df.iloc[i, 6] = re.findall(pattern=pattern, string=df.iloc[i, 0])[0]
+     
+     df.iloc[i, 0] = re.sub(pattern=pattern, string=df.iloc[i, 0], repl="")
+  
+  My regex pattern didn't work for all clubs, so I solved it using an IF/ELIF, while I don't create a better pattern.
+  
+  ###### Code fragment
+  
+    for i in range(len(df)):
+        if "Al-Ansar" in df.iloc[i, 0]:
+            ...
+        elif "Ohod Club" in df.iloc[i, 0]:
+            ...
+        elif "Damac FC" in df.iloc[i, 0]:
+            ...
+        else:
+            ...
+
+##### Results 
+
+<img src="./Images/transform.png">
+
 [Transform - Notebook](https://github.com/MatheusSanteago/ScrapingSPLAttendances/blob/master/transform.ipynb)
 
 #### Load
@@ -60,5 +99,5 @@ Teams - RAW
 [Load - Notebook](https://github.com/MatheusSanteago/ScrapingSPLAttendances/blob/master/transform.ipynb)
 
 #### Data Flow
-![Data Flow](./Images/flow.png)
+<img src="./Images/flow.png">
 ## In progress...
