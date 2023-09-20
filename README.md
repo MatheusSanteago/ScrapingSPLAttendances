@@ -106,7 +106,10 @@ I didn't have any major difficulties here, I just opened the CSV files from Trus
 
 <img src="./Images/tables.png">
 
+##### Tables
+
 Clubs
+<br>
 <img src="./Images/table3.png">
 
 Champions
@@ -114,6 +117,7 @@ Champions
 <img src="./Images/table2.png">
 
 Attendances
+<br>
 <img src="./Images/table1.png">
 
 
