@@ -110,6 +110,9 @@ I didn't have any major difficulties here, I just opened the CSV files from Trus
 
 <img src="./Images/table2.png">
 
+<img src="./Images/table1.png">
+
+
 [Load - Notebook](https://github.com/MatheusSanteago/ScrapingSPLAttendances/blob/master/transform.ipynb)
 
 #### Data Flow
