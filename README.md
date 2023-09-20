@@ -95,9 +95,25 @@ In red, I used the sub() method, in this case where it was identified the patter
 [Transform - Notebook](https://github.com/MatheusSanteago/ScrapingSPLAttendances/blob/master/transform.ipynb)
 
 #### Load
---
+
+To load the data saved in the Trusted layer, I used SQLalchemy due to the practicality of using the create_engine() method in conjunction with the pandas to_sql() method.
+
+I didn't have any major difficulties here, I just opened the CSV files from Trusted Zone, connected them to PostgreSQL, and finished using to_sql for each Dataframe, creating the Attendances, Teams, and Champions tables
+
+###### Results
+
+##### Database - arabic_soccer
+
+<img src="./Images/tables.png">
+
+
+
+<img src="./Images/table3.png">
+
+<img src="./Images/table2.png">
+
 [Load - Notebook](https://github.com/MatheusSanteago/ScrapingSPLAttendances/blob/master/transform.ipynb)
 
 #### Data Flow
 <img src="./Images/flow.png">
-## In progress...
+
