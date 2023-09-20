@@ -110,6 +110,7 @@ Clubs
 <img src="./Images/table3.png">
 
 Champions
+<br>
 <img src="./Images/table2.png">
 
 Attendances
