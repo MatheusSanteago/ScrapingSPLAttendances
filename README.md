@@ -106,10 +106,13 @@ I didn't have any major difficulties here, I just opened the CSV files from Trus
 
 <img src="./Images/tables.png">
 
+Clubs
 <img src="./Images/table3.png">
 
+Champions
 <img src="./Images/table2.png">
 
+Attendances
 <img src="./Images/table1.png">
 
 
