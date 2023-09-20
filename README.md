@@ -106,8 +106,6 @@ I didn't have any major difficulties here, I just opened the CSV files from Trus
 
 <img src="./Images/tables.png">
 
-
-
 <img src="./Images/table3.png">
 
 <img src="./Images/table2.png">
