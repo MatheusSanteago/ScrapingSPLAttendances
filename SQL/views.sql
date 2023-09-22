@@ -25,7 +25,7 @@ group by qc."Clubs", dt.id;
 --- Attendances fact view
 
 CREATE OR REPLACE VIEW fact_attendances as
-	select ds.id as Stadium_ID, dt.id as Team_id, a."Capacity", a."Spectators" , a."Average", a."Matches", a."sold out", a."Year" from attendances a
+	select ds.id as Stadium_ID, dt.id as Club_id, a."Capacity", a."Spectators" , a."Average", a."Matches", a."sold out", a."Year" from attendances a
 	join dim_stadiums ds on a."Stadium" = ds."Stadium"
 	join dim_teams dt on a."Club" = dt."Clubs"
 	order by "Year";
