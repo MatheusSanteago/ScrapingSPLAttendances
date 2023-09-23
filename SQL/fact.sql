@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS fact_attendances (
     "sold out" VARCHAR(3),
     Year INT,
     FOREIGN KEY(Stadium_ID) REFERENCES dim_stadiums(ID),
-    FOREIGN KEY(Club_ID) REFERENCES dim_teams(ID));
+    FOREIGN KEY(Club_ID) REFERENCES dim_clubs(ID));
 
 
 -- DML Commands
@@ -67,7 +67,7 @@ WITH fact AS (
 	SELECT ds.id AS Stadium_ID, dt.id as Team_id, a."Capacity", a."Spectators" , a."Average", a."Matches", a."sold out", a."Year" 
   FROM attendances a
 	JOIN dim_stadiums ds ON a."Stadium" = ds."stadium"
-	JOIN dim_teams dt ON a."Club" = dt."clubs"
+	JOIN dim_clubs dt ON a."Club" = dt."clubs"
 	ORDER BY "Year"
 )
 
