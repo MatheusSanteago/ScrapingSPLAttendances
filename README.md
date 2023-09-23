@@ -123,6 +123,17 @@ Attendances
 
 [Load - Notebook](https://github.com/MatheusSanteago/ScrapingSPLAttendances/blob/master/transform.ipynb)
 
+#### Data Model 
+After loading the database I decided to do snowflake data modeling, with my fact being Attendances, linked to the dimensions, stadiums, and clubs. The trophies dimension was only linked to dim_clubs.
+
+I run SQL in DBeaver, I used DDL and DML commands.
+To insert the data into the table I used an INSERT INTO with SELECT, bringing the data in the way I intended to use it
+
+[SQL Commands](https://github.com/MatheusSanteago/ScrapingSPLAttendances/blob/master/SQL/fact.sql)
+###### Snowflake
+
+<img src="./Images/snowflake_model.png">
+
 #### Data Flow
 <img src="./Images/flow.png">
 
