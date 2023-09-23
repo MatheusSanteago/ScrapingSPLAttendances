@@ -1,23 +1,11 @@
-CREATE OR REPLACE VIEW dim_trophies as
-select 
-	dt.id as club_id, count(CASE WHEN qc."League" = 'Yelo League' THEN 1 ELSE 0 END) as YeloLeague, count(CASE WHEN qc."League" = 'Saudi Pro League' THEN 1 ELSE 0 END) as SaudiProLeague 
-	from champions qc
-	join dim_teams dt on qc."Clubs" = dt."Clubs"
-group by qc."Clubs", dt.id;
-
-CREATE OR REPLACE VIEW fact_attendances as
-	select ds.id as Stadium_ID, dt.id as Team_id, a."Capacity", a."Spectators" , a."Average", a."Matches", a."sold out", a."Year" from attendances a
-	join dim_stadiums ds on a."Stadium" = ds."Stadium"
-	join dim_teams dt on a."Club" = dt."Clubs"
-	order by "Year";
-
+-- DDL Commands
 
 CREATE TABLE IF NOT EXISTS dim_stadiums (
 ID INT PRIMARY KEY,
 Stadium VARCHAR(120),
 Club VARCHAR(120));
 
-CREATE TABLE IF NOT EXISTS dim_teams (
+CREATE TABLE IF NOT EXISTS dim_clubs (
   ID INT PRIMARY KEY,
   Clubs VARCHAR(120), 
   Players INT, 
@@ -47,6 +35,7 @@ CREATE TABLE IF NOT EXISTS fact_attendances (
     FOREIGN KEY(Club_ID) REFERENCES dim_teams(ID));
 
 
+-- DML Commands
 WITH query_std AS (
     SELECT DISTINCT "Stadium", "Club" 
     FROM attendances
