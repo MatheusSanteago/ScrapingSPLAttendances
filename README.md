@@ -131,8 +131,17 @@ To insert the data into the table I used an INSERT INTO with SELECT, bringing th
 
 [SQL Commands](https://github.com/MatheusSanteago/ScrapingSPLAttendances/blob/master/SQL/fact.sql)
 ###### Snowflake
-
 <img src="./Images/snowflake_model.png">
+
+##### Results
+
+###### Fact
+<img src="./Images/fact.png">
+
+###### Dimesions
+<img src="./Images/clubs.png">
+<img src="./Images/trophies.png">
+<img src="./Images/stadiums.png">
 
 #### Data Flow
 <img src="./Images/flow.png">
