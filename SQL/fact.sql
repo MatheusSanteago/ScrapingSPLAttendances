@@ -44,32 +44,34 @@ INSERT INTO dim_stadiums ("id", "stadium", "club")
 SELECT row_number() over (order by "Stadium"  asc) as id, *
 FROM query_std;
     
-
-with query_teams as (select distinct 
-		"Clubs", "Players", "avg_age", "Foreigners", "market_value(€)", "total_market_value(€)", "League" 
-		from teams
+WITH query_teams AS (
+  SELECT DISTINCT 
+	"Clubs", "Players", "avg_age", "Foreigners", "market_value(€)", "total_market_value(€)", "League" 
+	FROM teams
 ) 
 INSERT INTO dim_teams (ID, Clubs, Players, avg_age, Foreigners, "market_value(€)", "total_market_value(€)", League)
-select row_number() over (order by "Clubs"  asc) as id, * 
-from query_teams;
+SELECT row_number() OVER (ORDER BY "Clubs" ASC) as id, * 
+FROM query_teams;
 
-with query_t as (
-select 
-	dt.id as club_id, count(CASE WHEN qc."League" = 'Yelo League' THEN 1 ELSE 0 END) as YeloLeague, count(CASE WHEN qc."League" = 'Saudi Pro League' THEN 1 ELSE 0 END) as SaudiProLeague 
-	from champions qc
-	join dim_teams dt on qc."Clubs" = dt."clubs"
-group by qc."Clubs", dt.id)
+WITH query_t AS (
+SELECT 
+	dt.id as club_id, count(CASE WHEN qc."League" = 'Yelo League' THEN 1 ELSE 0 END) as YeloLeague, --- Only count if condition is True
+  count(CASE WHEN qc."League" = 'Saudi Pro League' THEN 1 ELSE 0 END) as SaudiProLeague -- Only count if condition is True
+	FROM champions qc
+	JOIN dim_teams dt ON qc."Clubs" = dt."clubs"
+GROUP BY qc."Clubs", dt.id)
 INSERT INTO dim_trophies (Club_ID, YeloLeague, SaudiProLeague)
-select * from query_t;
+SELECT * FROM query_t;
 
-WITH fact as (
-	select ds.id as Stadium_ID, dt.id as Team_id, a."Capacity", a."Spectators" , a."Average", a."Matches", a."sold out", a."Year" from attendances a
-	join dim_stadiums ds on a."Stadium" = ds."stadium"
-	join dim_teams dt on a."Club" = dt."clubs"
-	order by "Year"
+WITH fact AS (
+	SELECT ds.id AS Stadium_ID, dt.id as Team_id, a."Capacity", a."Spectators" , a."Average", a."Matches", a."sold out", a."Year" 
+  FROM attendances a
+	JOIN dim_stadiums ds ON a."Stadium" = ds."stadium"
+	JOIN dim_teams dt ON a."Club" = dt."clubs"
+	ORDER BY "Year"
 )
 
 INSERT INTO fact_attendances (ID, Stadium_ID, Club_ID, Capacity, Spectators, Average, Matches, "sold out", "year")
-select row_number() over (order by "Year"  asc) as id, * 
-from fact;
+SELECT ROW_NUMBER() OVER (ORDER BY "Year"  ASC) AS id, * 
+FROM fact;
  
