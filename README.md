@@ -20,6 +20,8 @@ Saudi Pro League - [Wikipedia](https://en.wikipedia.org/wiki/Saudi_Pro_League)
       - for database interaction, choose this lib due to its practicality.
   - BeautifulSoup:
       - for parsing and navigating HTML.
+  - Numpy:
+      - for using data types.
 
 #### Extract
 
