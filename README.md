@@ -148,6 +148,7 @@ To insert the data into the table I used an INSERT INTO with SELECT, bringing th
 <img src="./Images/clubs.png">
 <img src="./Images/trophies.png">
 <img src="./Images/stadiums.png">
+<img src="./Images/table4.png">
 
 #### Data Flow
 <img src="./Images/flow.png">
