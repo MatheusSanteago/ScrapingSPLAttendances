@@ -20,6 +20,20 @@ CREATE TABLE IF NOT EXISTS dim_trophies (
   YeloLeague INT,
   SaudiProLeague INT,
   FOREIGN KEY(Club_ID) REFERENCES dim_teams(ID));
+
+CREATE TABLE IF NOT EXISTS dim_transfers (
+  id INT PRIMARY KEY,
+  club_id INT,
+  country VARCHAR(30),
+  player_name VARCHAR(60),
+  age INT,
+  position VARCHAR(20),	
+  club_involved_name VARCHAR(60),	
+  club_involved_country VARCHAR(60),	
+  transfer_movement VARCHAR(3),	
+  transfer_period VARCHAR(10),	
+  year INT,    
+  FOREIGN KEY(club_id) REFERENCES dim_clubs(id));
   
 CREATE TABLE IF NOT EXISTS fact_attendances (
     ID INT PRIMARY KEY,
@@ -36,6 +50,15 @@ CREATE TABLE IF NOT EXISTS fact_attendances (
 
 
 -- DML Commands
+WITH qyuery as (
+	select dc.id as club_id, country, player_name, "age", "position", club_involved_name, club_involved_country,transfer_movement, transfer_period, "year" from transfers t 
+	join dim_clubs dc on t."club_name" = dc."clubs"
+	order by "year"
+)
+INSERT INTO dim_transfers (id, club_id, country, player_name, "age", "position", club_involved_name,club_involved_country, transfer_movement, transfer_period, "year")
+select row_number() over (order by "year"  asc) as id, * 
+from qyuery;
+
 WITH query_std AS (
     SELECT DISTINCT "Stadium", "Club" 
     FROM attendances
