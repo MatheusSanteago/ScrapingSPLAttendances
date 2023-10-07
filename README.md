@@ -32,6 +32,8 @@ Within the extract notebook, there are three separate areas for scraping differe
 
 I use Pandas to preprocess data, transform it into CSV format and then store it in the RAW zone.
 
+To complement my data using a dataset from Kaggle, with data on player transfers in the SPL since 2007, I performed a cold load.
+
 [Extract - Notebook](https://github.com/MatheusSanteago/ScrapingSPLAttendances/blob/master/extract.ipynb)
 
 
@@ -91,6 +93,8 @@ In red, I used the sub() method, in this case where it was identified the patter
 ##### Results 
 
 <img src="./Images/transform.png">
+<img src="./Images/t2.png">
+
 
 [Transform - Notebook](https://github.com/MatheusSanteago/ScrapingSPLAttendances/blob/master/transform.ipynb)
 
