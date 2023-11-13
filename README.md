@@ -152,4 +152,3 @@ To insert the data into the table I used an INSERT INTO with SELECT, bringing th
 
 #### Data Flow
 <img src="./Images/flow.png">
-
